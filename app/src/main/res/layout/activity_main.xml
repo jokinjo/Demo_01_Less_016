@@ -24,6 +24,17 @@
         android:padding="16dp"
         android:text="Hello World" />
 
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="104dp"
+        android:ems="10"
+        android:hint="Enter Name"
+        android:inputType="textPersonName" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -34,10 +45,21 @@
         android:layout_marginStart="160dp"
         android:layout_marginTop="107dp"
         android:layout_marginEnd="163dp"
-        android:layout_marginBottom="501dp"
+        android:layout_marginBottom="128dp"
         android:onClick="buttonIsClicked"
         android:text="Button"
         android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/edtPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:ems="10"
+        android:hint="Enter Phone No."
+        android:inputType="phone" />
 
 
 </RelativeLayout>

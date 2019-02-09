@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,13 +16,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    String text = "";
+    String textN = "";
+    String textP = "";
 
     public void buttonIsClicked(View buttonView) {
-        TextView txt = findViewById(R.id.txt);
-        text = txt.getText().toString();
+        TextView edtName = findViewById(R.id.edtName);
+        textN = edtName.getText().toString();
 
-        Log.i(TAG, "buttonIsClicked: txt is " + text);
+        EditText edtPhone = findViewById(R.id.edtPhone);
+        textP = edtPhone.getText().toString();
+
+        Log.i(TAG, "buttonIsClicked - Name is: " + textN + "  Phone is: " + textP);
     }
 
 }
