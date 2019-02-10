@@ -3,10 +3,8 @@ package com.example.demo_01_less_016;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,27 +19,28 @@ public class MainActivity extends AppCompatActivity {
     CharSequence textN;
     CharSequence textP;
     String msg;
+    Integer intCount = 0;
+    Integer resId = 0;
+    Integer caseNo = 0;
+    Context mContext = MainActivity.this;
+
+//    ImageView imgView = null;   // WHY cannot these two lines be above the method scope?
+//    imgView = (ImageView) findViewById(R.id.imgView);
 
     public void buttonIsClicked(View buttonView) {
-        TextView edtName = findViewById(R.id.edtName);
-        textN = edtName.getText().toString();
 
-        EditText edtPhone = findViewById(R.id.edtPhone);
-        textP = edtPhone.getText();
+        ImageView imgView = null;   // WHY cannot these two lines be above the method scope?
+        imgView = (ImageView) findViewById(R.id.imgView);
 
+        caseNo = intCount++ % 3;
 
-        Context context = MainActivity.this;
-        Toast toastN = null;
-        Toast toastP = null;
-
-        toastN = toastN.makeText(context, textN, Toast.LENGTH_SHORT);
-        toastN.setGravity(Gravity.TOP, 0, 700);       //yOffset = [(420dpi / 1920px) * 5.5in]^-1 * 420dpi * yInches_to_offset
-        toastN.show();
-
-        toastP = toastP.makeText(context, textP, Toast.LENGTH_SHORT);
-        toastP.setGravity(Gravity.TOP, 0, 875);
-        toastP.show();
-
+        switch (caseNo) {
+            case 0: resId = (R.drawable.lion);  break;
+            case 1: resId = (R.drawable.tiger);  break;
+            case 2: resId = (R.drawable.bear);  break;
+            default: Toast.makeText(mContext, "caseNo > 2", Toast.LENGTH_SHORT).show();
+        }
+        imgView.setImageResource(resId);
     }
 
 }
